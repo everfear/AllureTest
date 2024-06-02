@@ -14,12 +14,10 @@ public class modelStepTest {
     private static final String REPO = "eroshenkoam/allure-example";
     private static final int ISSUENUM = 89;
 
-    public int getIssuenum()
-    {
+    public int getIssuenum() {
         return ISSUENUM;
     }
-    public String getRepo()
-    {
+    public String getRepo() {
         return REPO;
     }
 
