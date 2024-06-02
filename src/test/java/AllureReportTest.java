@@ -1,4 +1,6 @@
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selectors.withText;
@@ -9,6 +11,8 @@ public class AllureReportTest {
 
     @Test
     public void testIssueSearch(){
+        SelenideLogger.addListener("allure", new AllureSelenide());
+
         open("https://github.com");
 
         $(".header-search-button").click();
@@ -20,6 +24,5 @@ public class AllureReportTest {
         $(withText("89")).should(Condition.exist);
 
         closeWebDriver();
-
     }
 }
