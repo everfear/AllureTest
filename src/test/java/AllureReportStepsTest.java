@@ -41,4 +41,15 @@ public class AllureReportStepsTest {
 
         closeWebDriver();
     }
+
+    @Test
+    public void testAnnotatedStep() {
+        AllureReportWebStepsTest steps = new AllureReportWebStepsTest();
+
+        steps.openMainPage();
+        steps.searchForRepo(REPO);
+        steps.clickOnRepoLink(REPO);
+        steps.openIssuesTab();
+        steps.shouldSeeIssueWithNumber(ISSUENUM);
+    }
 }
