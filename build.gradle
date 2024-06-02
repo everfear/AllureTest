@@ -1,9 +1,24 @@
 plugins {
     id 'java'
+    id('io.qameta.allure') version '2.11.2'
 }
 
 group = 'guru.qa27'
 version = '1.0-SNAPSHOT'
+
+allure {
+    report {
+        version.set("2.19.0")
+    }
+    adapter {
+        aspectjWeaver.set(true)
+        frameworks {
+            junit5 {
+                adapterVersion.set("2.19.0")
+            }
+        }
+    }
+}
 
 repositories {
     mavenCentral()
@@ -13,7 +28,7 @@ dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation(
             "org.junit.jupiter:junit-jupiter:5.10.2",
-            "com.codeborne:selenide:7.2.3",
+            "com.codeborne:selenide:7.3.2",
             "org.apache.logging.log4j:log4j-slf4j2-impl:2.20.0"
     )
 }

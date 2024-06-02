@@ -1,6 +1,5 @@
 import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
@@ -13,8 +12,8 @@ public class AllureReportTest {
         open("https://github.com");
 
         $(".header-search-button").click();
-        $(".header-search-button").sendKeys("eroshenkoam/allure-example");
-        $(".header-search-button").submit();
+        $("#query-builder-test").sendKeys("eroshenkoam/allure-example");
+        $("#query-builder-test").submit();
 
         $(linkText("eroshenkoam/allure-example")).click();
         $("#issues-tab").click();
