@@ -8,7 +8,8 @@ import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static org.openqa.selenium.By.linkText;
 
-public class AllureReportStepsTest {
+
+public class LambdaTest {
 
     private static final String REPO = "eroshenkoam/allure-example";
     private static final int ISSUENUM = 89;
@@ -40,16 +41,5 @@ public class AllureReportStepsTest {
         });
 
         closeWebDriver();
-    }
-
-    @Test
-    public void testAnnotatedStep() {
-        AllureReportWebStepsTest steps = new AllureReportWebStepsTest();
-
-        steps.openMainPage();
-        steps.searchForRepo(REPO);
-        steps.clickOnRepoLink(REPO);
-        steps.openIssuesTab();
-        steps.shouldSeeIssueWithNumber(ISSUENUM);
     }
 }

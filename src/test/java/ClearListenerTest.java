@@ -7,7 +7,8 @@ import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 import static org.openqa.selenium.By.linkText;
 
-public class AllureReportTest {
+
+public class ClearListenerTest {
 
     @Test
     public void testIssueSearch(){
